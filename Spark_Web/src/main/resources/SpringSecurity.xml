@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:s="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-4.2.xsd
+	">
+
+
+	<s:http auto-config="true" authentication-manager-ref="generalManager">
+		<s:intercept-url pattern="/Web/Index" access="hasRole('ROLE_ADMIN')" />
+		<s:form-login login-page="/User/Login"
+			password-parameter="password" username-parameter="username"
+			authentication-failure-url="/User/Login?error" login-processing-url="/User/Login/j_spring_security_check"
+			authentication-success-handler-ref="savedRequestAwareAuthenticationSuccessHandler" />
+		<s:logout logout-success-url="/User/Login?logout"
+			logout-url="/User/Logout" delete-cookies="JSESSIONID" />
+		<s:csrf />
+
+		<s:remember-me token-validity-seconds="1209600"
+			remember-me-parameter="remember-me" data-source-ref="dataSource" />
+	</s:http>
+
+	<s:authentication-manager id="generalManager">
+		<s:authentication-provider ref="authProvider">
+		</s:authentication-provider>
+	</s:authentication-manager>
+
+	<bean id="authProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<property name="userDetailsService" ref="userDetailsService" />
+		<property name="passwordEncoder" ref="encoder" />
+	</bean>
+
+	<bean id="encoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+	<bean id="savedRequestAwareAuthenticationSuccessHandler"
+		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+		<property name="targetUrlParameter" value="targetUrl" />
+	</bean>
+
+
+</beans>
