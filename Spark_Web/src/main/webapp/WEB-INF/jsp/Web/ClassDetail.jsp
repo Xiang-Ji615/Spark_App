@@ -23,7 +23,8 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link" href="#">Teachers</a>
 					</li>
-					<li class="nav-item"><a id="logout" class="nav-link" href="javascript:formSubmit()">Logout</a></li>
+					<li class="nav-item"><a id="logout" class="nav-link"
+						href="javascript:formSubmit()">Logout</a></li>
 					<!--  li class="nav-item">
                         <a class="nav-link" href="#about"></a>
                     </li>
@@ -40,29 +41,41 @@
 			<div class="panel panel-info">
 				<div class="panel-heading">ClassDetial</div>
 				<div class="panel-body">
-					<table class="table table-hover">
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Address</th>
-							<th>Action</th>
-						</tr>
-						<c:forEach items="${students}" var="student">
+					<div class="table-responsive">
+						<table class="table table-hover">
 							<tr>
-								<td>${student.firstName}</td>
-								<td>${student.lastName}</td>
-								<td>${student.address}</td>
-								<td><a class="btn btn-primary"
-									href="/Web/Student?class=${classId}&student=${student.id}">Detail</a>
-								</td>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Address</th>
+								<th>Action</th>
 							</tr>
-						</c:forEach>
-					</table>
-					<!--  div class="row">
+							<c:forEach items="${students}" var="student">
+								<tr>
+									<td>${student.firstName}</td>
+									<td>${student.lastName}</td>
+									<td>${student.address}</td>
+									<td><a class="btn btn-primary"
+										href="/Web/Student?class=${classId}&student=${student.id}">Detail</a>
+									</td>
+								</tr>
+							</c:forEach>
+						</table>
+						<!--  div class="row">
 						<div class="col-sm-offset-10 col-sm-2">
 							<a href="ServiceBoxAdd" class="btn btn-primary btn-block">Add</a>
 						</div>
 					</div -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-7 col-xs-0"></div>
+				<div class="col-md-2  col-xs-12">
+					<!-- button type="submit" class="btn btn-primary btn-block">Update</button -->
+				</div>
+				<div class="col-md-2 col-xs-12 col-xs-offset-0">
+					<a id="btnCancel" class="btn btn-danger btn-block"
+						href="/Web/Index">Back</a>
 				</div>
 			</div>
 		</div>

@@ -23,7 +23,8 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link" href="#">Teachers</a>
 					</li>
-					<li class="nav-item"><a id="logout" class="nav-link" href="javascript:formSubmit()">Logout</a></li>
+					<li class="nav-item"><a id="logout" class="nav-link"
+						href="javascript:formSubmit()">Logout</a></li>
 					<!--  li class="nav-item">
                         <a class="nav-link" href="#about"></a>
                     </li>
@@ -40,27 +41,28 @@
 			<div class="panel panel-info">
 				<div class="panel-heading">Class</div>
 				<div class="panel-body">
-					<table class="table table-hover">
-						<tr>
-							<th>Year</th>
-							<th>Class No</th>
-							<th>Action</th>
-						</tr>
-						<c:forEach items="${classes}" var="classDetail">
+					<div class="table-responsive">
+						<table class="table table-hover">
 							<tr>
-								<td>${classDetail.year}</td>
-								<td>${classDetail.classNumber}</td>
-								<td><a class="btn btn-primary"
-									href="/Web/Class?class=${classDetail.id}">View Detail</a>
-								</td>
+								<th>Year</th>
+								<th>Class No</th>
+								<th>Action</th>
 							</tr>
-						</c:forEach>
-					</table>
-					<!--  div class="row">
+							<c:forEach items="${classes}" var="classDetail">
+								<tr>
+									<td>${classDetail.year}</td>
+									<td>${classDetail.classNumber}</td>
+									<td><a class="btn btn-primary"
+										href="/Web/Class?class=${classDetail.id}">View Detail</a></td>
+								</tr>
+							</c:forEach>
+						</table>
+						<!--  div class="row">
 						<div class="col-sm-offset-10 col-sm-2">
 							<a href="ServiceBoxAdd" class="btn btn-primary btn-block">Add</a>
 						</div>
 					</div -->
+					</div>
 				</div>
 			</div>
 		</div>

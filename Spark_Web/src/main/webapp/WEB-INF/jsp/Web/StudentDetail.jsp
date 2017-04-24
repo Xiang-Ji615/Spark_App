@@ -23,7 +23,8 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link" href="#">Teachers</a>
 					</li>
-					<li class="nav-item"><a id="logout" class="nav-link" href="javascript:formSubmit()">Logout</a></li>
+					<li class="nav-item"><a id="logout" class="nav-link"
+						href="javascript:formSubmit()">Logout</a></li>
 					<!--  li class="nav-item">
                         <a class="nav-link" href="#about"></a>
                     </li>
@@ -40,29 +41,43 @@
 			<div class="panel panel-info">
 				<div class="panel-heading">Student</div>
 				<div class="panel-body">
-					<table class="table table-hover">
-						<tr>
-							<th>Task Detail</th>
-							<th>Completed</th>
-							<th>Due Date</th>
-							<th>Mark</th>
-						</tr>
-						<c:forEach items="${tasks}" var="task">
+					<div class="table-responsive">
+						<table class="table table-hover">
 							<tr>
-								<td>${task.task.taskDescription}</td>
-								<td>${task.completed}</td>
-								<td>${task.dueDate}</td>
-								<td><a class="btn btn-primary"
-									href="/Web/Task?class=${classId}&student=${studentId}&task=${task.id}">Detail</a>
-								</td>
+								<th>Task Detail</th>
+								<th>Completed</th>
+								<th>Due Date</th>
+								<th>Mark</th>
+								<th>Action</th>
 							</tr>
-						</c:forEach>
-					</table>
-					<!--  div class="row">
+							<c:forEach items="${tasks}" var="task">
+								<tr>
+									<td>${task.task.taskDescription}</td>
+									<td>${task.completed}</td>
+									<td>${task.dueDate}</td>
+									<td>${task.mark}</td>
+									<td><a class="btn btn-primary"
+										href="/Web/Task?class=${classId}&student=${studentId}&task=${task.id}">Detail</a>
+									</td>
+								</tr>
+							</c:forEach>
+						</table>
+						<!--  div class="row">
 						<div class="col-sm-offset-10 col-sm-2">
 							<a href="ServiceBoxAdd" class="btn btn-primary btn-block">Add</a>
 						</div>
 					</div -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-7 col-xs-0"></div>
+				<div class="col-md-2  col-xs-12">
+					<!-- button type="submit" class="btn btn-primary btn-block">Update</button -->
+				</div>
+				<div class="col-md-2 col-xs-12 col-xs-offset-0">
+					<a id="btnCancel" class="btn btn-danger btn-block"
+						href="/Web/Class?class=${classId}">Back</a>
 				</div>
 			</div>
 		</div>

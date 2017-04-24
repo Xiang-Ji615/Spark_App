@@ -41,6 +41,12 @@
 			<form method="POST" action="/Web/UpdateMark">
 				<input type="hidden" name="${_csrf.parameterName}"
 					value="${_csrf.token}" />
+					<input type="hidden" class="form-control form-control-warning"
+							id="inputMark" placeholder="class" name="class" value="${classId}">
+					<input type="hidden" class="form-control form-control-warning"
+							id="inputMark" placeholder="student" name="student" value="${studentId}">
+					<input type="hidden" class="form-control form-control-warning"
+							id="inputMark" placeholder="student" name="task" value="${taskId}">
 				<div class="form-group row">
 					<label for="inputTaskDescription" class="col-sm-2 col-form-label">Task
 						Description</label>
@@ -52,7 +58,7 @@
 				<div class="form-group row">
 					<label for="inputMark" class="col-sm-2 col-form-label">Mark</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control form-control-warning"
+						<input type="text" class="form-control form-control-warning" name="mark"
 							id="inputMark" placeholder="mark" value="${taskDetail.mark}">
 					</div>
 				</div>
