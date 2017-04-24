@@ -341,3 +341,10 @@
 .panel-danger > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ebccd1;
 }
+
+ @media (max-width: 779px) {
+     .btn{
+         margin-bottom:10px;
+ }
+
+

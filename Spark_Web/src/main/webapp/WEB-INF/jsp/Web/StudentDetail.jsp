@@ -42,21 +42,21 @@
 				<div class="panel-body">
 					<table class="table table-hover">
 						<tr>
-							<th>Heading</th>
-							<th>Text</th>
-							<th>Icon Type</th>
-							<th>Actions</th>
+							<th>Task Detail</th>
+							<th>Completed</th>
+							<th>Due Date</th>
+							<th>Mark</th>
 						</tr>
-						<!--  c:forEach items="${model.serviceBoxes}" var="serviceBox" -->
+						<c:forEach items="${tasks}" var="task">
 							<tr>
-								<td>Test</td>
-								<td>Test</td>
-								<td>Test</td>
+								<td>${task.task.taskDescription}</td>
+								<td>${task.completed}</td>
+								<td>${task.dueDate}</td>
 								<td><a class="btn btn-primary"
-									href="/Web/Task?class=JJ&student=123&task=123">Detail</a>
+									href="/Web/Task?class=${classId}&student=${studentId}&task=${task.id}">Detail</a>
 								</td>
 							</tr>
-						<!--  /c:forEach-->
+						</c:forEach>
 					</table>
 					<!--  div class="row">
 						<div class="col-sm-offset-10 col-sm-2">

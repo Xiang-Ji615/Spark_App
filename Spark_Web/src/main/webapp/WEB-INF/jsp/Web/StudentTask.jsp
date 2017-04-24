@@ -23,7 +23,8 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link" href="#">Teachers</a>
 					</li>
-					<li class="nav-item"><a id="logout" class="nav-link" href="javascript:formSubmit()">Logout</a></li>
+					<li class="nav-item"><a id="logout" class="nav-link"
+						href="javascript:formSubmit()">Logout</a></li>
 					<!--  li class="nav-item">
                         <a class="nav-link" href="#about"></a>
                     </li>
@@ -37,7 +38,36 @@
 
 	<section id="contact">
 		<div class="container">
-			<h1>Task Detail</h1>
+			<form method="POST" action="/Web/UpdateMark">
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+				<div class="form-group row">
+					<label for="inputTaskDescription" class="col-sm-2 col-form-label">Task
+						Description</label>
+					<div class="col-sm-10">
+						<textarea rows="5" class="form-control" id="inputTaskDescription"
+							placeholder="Task Description" name="taskDescription" disabled>${taskDetail.task.taskDescription}</textarea>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputMark" class="col-sm-2 col-form-label">Mark</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control form-control-warning"
+							id="inputMark" placeholder="mark" value="${taskDetail.mark}">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-7 col-xs-0">
+					</div>
+					<div class="col-md-2  col-xs-12">
+						<button type="submit" class="btn btn-primary btn-block">Update</button>
+					</div>
+					<div class="col-md-2 col-xs-12 col-xs-offset-0">
+						<button id="btnCancel" class="btn btn-danger btn-block"  onclick="history.go(-1);" >Cancel</button>
+					</div>
+				</div>
+		</form>
+		<!--  h1>${taskDetail.task.taskDescription}</h1 -->
 		</div>
 	</section>
 

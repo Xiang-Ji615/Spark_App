@@ -40,7 +40,7 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">validate</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 				<prop key="hibernate.default_schema">spark</prop>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 
@@ -50,6 +50,12 @@
 			<list>
 				<value>main.java.spark.dao.model.user.User</value>
 				<value>main.java.spark.dao.model.user.UserRole</value>
+				<value>main.java.spark.dao.model.Class</value>
+				<value>main.java.spark.dao.model.Teacher</value>
+				<value>main.java.spark.dao.model.Student</value>
+				<value>main.java.spark.dao.model.Task</value>
+				<value>main.java.spark.dao.model.AssigningTask</value>
+				<value>main.java.spark.dao.model.PersistentLogins</value>
 			</list>
 		</property>
 	</bean>
