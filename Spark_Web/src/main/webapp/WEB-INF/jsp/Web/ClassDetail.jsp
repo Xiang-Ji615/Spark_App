@@ -39,7 +39,7 @@
 	<section id="contact">
 		<div class="container">
 			<div class="panel panel-info">
-				<div class="panel-heading">ClassDetial</div>
+				<div class="panel-heading">Class Students</div>
 				<div class="panel-body">
 					<div class="table-responsive">
 						<table class="table table-hover">
