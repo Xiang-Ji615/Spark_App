@@ -44,21 +44,21 @@
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<tr>
+								<th>Action</th>
+								<th>Mark</th>
 								<th>Task Detail</th>
 								<th>Completed</th>
 								<th>Due Date</th>
-								<th>Mark</th>
-								<th>Action</th>
 							</tr>
 							<c:forEach items="${tasks}" var="task">
 								<tr>
-									<td>${task.task.taskDescription}</td>
-									<td>${task.completed}</td>
-									<td>${task.dueDate}</td>
-									<td>${task.mark}</td>
 									<td><a class="btn btn-primary"
 										href="/Web/Task?class=${classId}&student=${studentId}&task=${task.id}">Detail</a>
 									</td>
+									<td>${task.mark}</td>
+									<td>${task.task.taskDescription}</td>
+									<td>${task.completed}</td>
+									<td>${task.dueDate}</td>									
 								</tr>
 							</c:forEach>
 						</table>

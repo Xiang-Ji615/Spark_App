@@ -44,19 +44,19 @@
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<tr>
+								<th>Action</th>
 								<th>First Name</th>
 								<th>Last Name</th>
 								<th>Address</th>
-								<th>Action</th>
 							</tr>
 							<c:forEach items="${students}" var="student">
 								<tr>
-									<td>${student.firstName}</td>
-									<td>${student.lastName}</td>
-									<td>${student.address}</td>
 									<td><a class="btn btn-primary"
 										href="/Web/Student?class=${classId}&student=${student.id}">Detail</a>
 									</td>
+									<td>${student.firstName}</td>
+									<td>${student.lastName}</td>
+									<td>${student.address}</td>
 								</tr>
 							</c:forEach>
 						</table>

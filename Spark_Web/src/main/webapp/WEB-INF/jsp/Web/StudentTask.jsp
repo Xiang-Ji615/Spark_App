@@ -55,6 +55,15 @@
 							placeholder="Task Description" name="taskDescription" disabled>${taskDetail.task.taskDescription}</textarea>
 					</div>
 				</div>
+			
+				<div class="form-group row">
+					<label for="inputDueDate" class="col-sm-2 col-form-label">Due Date</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control form-control-warning" name="dueDate"
+							id="inputDueDate" placeholder="Due Date" value="${taskDetail.dueDate}" disabled>
+					</div>
+				</div>
+				
 				<div class="form-group row">
 					<label for="inputMark" class="col-sm-2 col-form-label">Mark</label>
 					<div class="col-sm-10">
@@ -62,6 +71,7 @@
 							id="inputMark" placeholder="mark" value="${taskDetail.mark}">
 					</div>
 				</div>
+				
 				<div class="form-group row">
 					<div class="col-md-7 col-xs-0">
 					</div>

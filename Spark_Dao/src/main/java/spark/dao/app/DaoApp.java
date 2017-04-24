@@ -201,7 +201,7 @@ public class DaoApp  implements CommandLineRunner {
     	
     	
     	//Init User
-    	User user = new User("jj", "$2a$10$mqNwcSc7GYEPcdep3n2v5.4i2/S33B0Rzyhxn6pVQFyzNmLwZVnma", true);
+    	User user = new User("admin", "$2a$04$VBRCGPe1weHXefiiLG/FyONBUHC521qYfBIu0kPHSTrZSzePuvZp.", true);
     	UserRole userRole = new UserRole();
     	userRole.setRole("ROLE_ADMIN");
     	userRole.setUser(user);

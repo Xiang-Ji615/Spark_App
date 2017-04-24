@@ -44,16 +44,16 @@
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<tr>
+								<th>Action</th>
 								<th>Year</th>
 								<th>Class No</th>
-								<th>Action</th>
 							</tr>
 							<c:forEach items="${classes}" var="classDetail">
 								<tr>
+									<td><a class="btn btn-primary"
+										href="/Web/Class?class=${classDetail.id}">Detail</a></td>
 									<td>${classDetail.year}</td>
 									<td>${classDetail.classNumber}</td>
-									<td><a class="btn btn-primary"
-										href="/Web/Class?class=${classDetail.id}">View Detail</a></td>
 								</tr>
 							</c:forEach>
 						</table>
