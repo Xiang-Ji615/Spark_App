@@ -12,12 +12,12 @@
 	<!-- mport resource="SpringSecurity.xml" / -->
 	<import resource="SparkDao_Database.xml" />
 
-	<bean
+	<!--  bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location">
 			<value>DBConfig.properties</value>
 		</property>
-	</bean>
+	</bean -->
 
 	<!-- bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig"> <property 
 		name="poolName" value="springHikariCP" /> <property name="dataSourceClassName" 

@@ -38,7 +38,7 @@
 
 	<section id="contact">
 		<div class="container">
-			<form method="POST" action="/Web/UpdateMark">
+			<form method="POST" action="../Web/UpdateMark">
 				<input type="hidden" name="${_csrf.parameterName}"
 					value="${_csrf.token}" />
 					<input type="hidden" class="form-control form-control-warning"

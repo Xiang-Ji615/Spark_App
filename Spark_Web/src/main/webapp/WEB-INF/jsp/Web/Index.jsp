@@ -51,7 +51,7 @@
 							<c:forEach items="${classes}" var="classDetail">
 								<tr>
 									<td><a class="btn btn-primary"
-										href="/Web/Class?class=${classDetail.id}">Detail</a></td>
+										href="../Web/Class?class=${classDetail.id}">Detail</a></td>
 									<td>${classDetail.year}</td>
 									<td>${classDetail.classNumber}</td>
 								</tr>

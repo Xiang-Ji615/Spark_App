@@ -53,7 +53,7 @@
 							<c:forEach items="${tasks}" var="task">
 								<tr>
 									<td><a class="btn btn-primary"
-										href="/Web/Task?class=${classId}&student=${studentId}&task=${task.id}">Detail</a>
+										href="../Web/Task?class=${classId}&student=${studentId}&task=${task.id}">Detail</a>
 									</td>
 									<td>${task.mark}</td>
 									<td>${task.task.taskDescription}</td>
@@ -77,7 +77,7 @@
 				</div>
 				<div class="col-md-2 col-xs-12 col-xs-offset-0">
 					<a id="btnCancel" class="btn btn-danger btn-block"
-						href="/Web/Class?class=${classId}">Back</a>
+						href="../Web/Class?class=${classId}">Back</a>
 				</div>
 			</div>
 		</div>

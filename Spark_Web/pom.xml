@@ -3,6 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>SparkApp</groupId>
 	<artifactId>SparkApp</artifactId>
+	<packaging>war</packaging>
 
 	<parent>
 		<groupId>Spark_Build</groupId>
@@ -31,6 +32,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>Spark</finalName>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
