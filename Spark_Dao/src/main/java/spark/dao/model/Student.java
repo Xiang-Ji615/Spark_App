@@ -109,11 +109,11 @@ public class Student {
 		this.teacher = teacher;
 	}
 
-	private List<AssigningTask> getAssigningTasks() {
+	public List<AssigningTask> getAssigningTasks() {
 		return assigningTasks;
 	}
 
-	private void setAssigningTasks(List<AssigningTask> assigningTasks) {
+	public void setAssigningTasks(List<AssigningTask> assigningTasks) {
 		this.assigningTasks = assigningTasks;
 	}
 

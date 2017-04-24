@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import main.java.spark.dao.dao.IAssigningTaskDao;
 import main.java.spark.dao.dao.IClassDao;
 import main.java.spark.dao.dao.IStudentDao;
