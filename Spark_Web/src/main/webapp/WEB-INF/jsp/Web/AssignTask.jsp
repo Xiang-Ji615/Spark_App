@@ -50,18 +50,18 @@
 						<table class="table table-hover" id="taskTable">
 							<tr>
 								<th width="35%">Action</th>
-								<th width="45%">Task Detail</th>
 								<th width="20%">Due Date</th>
+								<th width="45%">Task Detail</th>
 							</tr>
 							<c:forEach items="${tasks}" var="task">
 								<tr>
 									<td><input type="checkbox" class="form-control addtask"
 										data-width="100%" name="add" data-toggle="toggle"
 										data-on="Added" data-off="No" taskid="${task.id}" /></td>
-									<td>${task.taskDescription}</td>
 									<td><input type="text"
 										class="form-control form-control addduedate" id="inputDuedate"
 										placeholder="duedate" name="duedate" value="${dueDate}" taskid="${task.id}"></td>
+									<td>${task.taskDescription}</td>
 								</tr>
 							</c:forEach>
 						</table>
