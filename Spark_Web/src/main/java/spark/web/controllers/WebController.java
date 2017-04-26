@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import main.java.spark.bo.bo.IAssigningTaskBo;
 import main.java.spark.bo.bo.IClassBo;
 import main.java.spark.bo.bo.IStudentBo;
+import main.java.spark.bo.bo.ITaskBo;
 import main.java.spark.dao.model.AssigningTask;
 
 
@@ -29,6 +30,9 @@ public class WebController {
 	
 	@Autowired
 	IAssigningTaskBo assigningTaskBo;
+	
+	@Autowired
+	ITaskBo taskBo;
 	
 	
 	@RequestMapping(value="Index", method=RequestMethod.GET, produces=MediaType.ALL_VALUE)
@@ -78,9 +82,20 @@ public class WebController {
 	}
 	
 	@RequestMapping(value="AssignTask", method=RequestMethod.GET, produces=MediaType.ALL_VALUE)
-	public String AssignTask(@RequestParam(name="class") String classId, @RequestParam(name="student") String studentId){
+	public String AssignTask(@RequestParam(name="class") String classId, @RequestParam(name="student") String studentId, ModelMap map){
 		System.out.println("Class: "+classId + ", Student: "+studentId);
+		map.addAttribute("classId", classId);
+		map.addAttribute("studentId", studentId);
+		map.addAttribute("tasks", taskBo.listTasks());
 		return "Web/AssignTask";
 	}
+	
+	@RequestMapping(value="AssignTask", method=RequestMethod.POST)
+	public String AssignTaskPost(@RequestParam(name="class") String classId, @RequestParam(name="student") String studentId, @RequestParam(name="selected") String selected, ModelMap map){
+		System.out.println("Class: "+classId + ", Student: "+studentId);
+		System.out.println(selected);
+		return "redirect:../Web/Student?class="+classId+"&student="+studentId;
+	}
+
 
 }
