@@ -14,6 +14,8 @@
 <script src="../js/freelancer.min.js"></script>
 <script src="../js/Logout.js"></script>
 
+
+
 <form action="../User/Logout" method="POST" id="userLogoutForm">
 	<input type="hidden" name="${_csrf.parameterName}"
 		value="${_csrf.token}" />

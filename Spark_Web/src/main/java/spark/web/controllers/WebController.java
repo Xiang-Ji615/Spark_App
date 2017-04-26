@@ -1,5 +1,7 @@
 package main.java.spark.web.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -61,14 +63,16 @@ public class WebController {
 	}
 	
 	@RequestMapping(value="UpdateMark", method=RequestMethod.POST, produces=MediaType.ALL_VALUE)
-	public String UpdateMark(@RequestParam(name="class") String classId, @RequestParam(name="student") String studentId, @RequestParam(name="task") String taskId, String mark){
+	public String UpdateMark(@RequestParam(name="class") String classId, @RequestParam(name="student") String studentId, @RequestParam(name="task") String taskId, String mark, String completed){
 		System.out.println(mark);
 		AssigningTask assigningTask = assigningTaskBo.findById(Integer.valueOf(taskId));
 		assigningTask.setMark(Integer.valueOf(mark));
 		if(!StringUtils.isEmpty(mark) && Integer.valueOf(mark) > 0)
 			assigningTask.setCompleted(1);
 		else
-			assigningTask.setCompleted(0);
+			assigningTask.setCompleted(0);	
+		completed = Optional.ofNullable(completed).orElse("off");
+		assigningTask.setCompleted(completed.equals("on")?1:0);
 		assigningTaskBo.saveOrUpateAssigningTask(assigningTask);
 		return "redirect:../Web/Student?class="+classId+"&student="+studentId;
 	}

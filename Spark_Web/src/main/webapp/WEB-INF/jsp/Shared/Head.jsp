@@ -22,6 +22,9 @@
 <link href="../css/freelancer.min.css" rel="stylesheet">
 <link href="../css/Index.css" rel="stylesheet">
 
+<link href="../css/TaskDetail/bootstrap-toggle.min.css" rel="stylesheet">
+
+
 <!-- Temporary navbar container fix -->
 <style>
 .navbar-toggler {

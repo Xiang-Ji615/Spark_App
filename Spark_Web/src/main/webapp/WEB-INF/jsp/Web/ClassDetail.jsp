@@ -52,7 +52,7 @@
 							<c:forEach items="${students}" var="student">
 								<tr>
 									<td><a class="btn btn-primary"
-										href="../Web/Student?class=${classId}&student=${student.id}">Detail</a>
+										href="../Web/Student?class=${classId}&student=${student.id}">Tasks</a>
 									</td>
 									<td>${student.firstName}</td>
 									<td>${student.lastName}</td>
@@ -84,6 +84,7 @@
 
 
 	<jsp:include page="../Shared/Foot.jsp"></jsp:include>
+
 
 </body>
 

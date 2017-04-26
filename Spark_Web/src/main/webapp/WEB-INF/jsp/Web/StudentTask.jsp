@@ -65,6 +65,17 @@
 				</div>
 				
 				<div class="form-group row">
+					<label for="inputCompleted" class="col-sm-2 col-form-label">Completed</label>
+					<div class="col-sm-10">
+						<input type="checkbox" class="form-control" data-width="100%" name="completed"
+						<c:if test="${taskDetail.completed == 1}">
+							checked
+						</c:if>
+						 data-toggle="toggle" id="toggle-two"  data-on="Completed" data-off="Not Completed">
+					</div>
+				</div>
+				
+				<div class="form-group row">
 					<label for="inputMark" class="col-sm-2 col-form-label">Mark</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control form-control-warning" name="mark"
@@ -87,9 +98,8 @@
 		</div>
 	</section>
 
-
-
 	<jsp:include page="../Shared/Foot.jsp"></jsp:include>
+	<script src="../js/TaskDetail/bootstrap-toggle.min.js"></script>
 
 </body>
 

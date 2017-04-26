@@ -53,7 +53,7 @@
 							<c:forEach items="${tasks}" var="task">
 								<tr>
 									<td><a class="btn btn-primary"
-										href="../Web/Task?class=${classId}&student=${studentId}&task=${task.id}">Detail</a>
+										href="../Web/Task?class=${classId}&student=${studentId}&task=${task.id}">Edit</a>
 									</td>
 									<td>${task.mark}</td>
 									<td>${task.task.taskDescription}</td>

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="login">
-		<h1>Spark Login</h1>
+		<h1>SparQ Login</h1>
 		<form method="post" action="../User/Login/j_spring_security_check">
 			<input type="text" name="username" placeholder="Username"
 				required="required" /> <input type="password" name="password"
