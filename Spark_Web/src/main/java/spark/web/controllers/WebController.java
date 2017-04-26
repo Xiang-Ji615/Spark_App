@@ -90,12 +90,7 @@ public class WebController {
 		return "Web/AssignTask";
 	}
 	
-	@RequestMapping(value="AssignTask", method=RequestMethod.POST)
-	public String AssignTaskPost(@RequestParam(name="class") String classId, @RequestParam(name="student") String studentId, @RequestParam(name="selected") String selected, ModelMap map){
-		System.out.println("Class: "+classId + ", Student: "+studentId);
-		System.out.println(selected);
-		return "redirect:../Web/Student?class="+classId+"&student="+studentId;
-	}
+
 
 
 }
