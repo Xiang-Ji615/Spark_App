@@ -22,10 +22,16 @@ function fire_ajax_submit() {
 		if($(this)[0].checked == true)
 			selected[$(this).attr("taskid")] = $(this)[0].checked;
 	});
+	var duedate = {};
+	var dueDateVar = $("#taskTable").find('.addduedate');
+	dueDateVar.each(function() {
+		duedate[$(this).attr("taskid")] = $(this)[0].value;
+	});
 	var classid = $("#class")[0].value;
 	var student = ($("#student")[0].value);
 	
     data["selected"] =JSON.stringify(selected);
+    data["duedate"] =JSON.stringify(duedate)
     data["class"] = classid;
     data["student"] = student;
     
@@ -51,7 +57,7 @@ function fire_ajax_submit() {
         },
     	error: function(jqXHR, textStatus) {
     		console.log("Request failed: " + JSON.stringify(jqXHR));
-    		window.location.replace("http://"+document.location.hostname+":8080"+jqXHR.responseText);
+    		window.location.replace(jqXHR.responseText);
     	}
     })
 

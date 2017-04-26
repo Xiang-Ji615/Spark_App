@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
-<meta name="_csrf" content="${_csrf.token}"/>
-<meta name="_csrf_header" content="${_csrf.headerName}"/>
+<meta name="_csrf" content="${_csrf.token}" />
+<meta name="_csrf_header" content="${_csrf.headerName}" />
 <jsp:include page="../Shared/Head.jsp"></jsp:include>
 <body class="index" id="page-top">
 
@@ -45,11 +45,13 @@
 						<input type="hidden" class="form-control form-control-warning"
 							id="class" placeholder="class" name="class" value="${classId}">
 						<input type="hidden" class="form-control form-control-warning"
-							id="student" placeholder="student" name="student" value="${studentId}">
+							id="student" placeholder="student" name="student"
+							value="${studentId}">
 						<table class="table table-hover" id="taskTable">
 							<tr>
 								<th width="35%">Action</th>
-								<th width="65%">Task Detail</th>
+								<th width="45%">Task Detail</th>
+								<th width="20%">Due Date</th>
 							</tr>
 							<c:forEach items="${tasks}" var="task">
 								<tr>
@@ -57,7 +59,9 @@
 										data-width="100%" name="add" data-toggle="toggle"
 										data-on="Added" data-off="No" taskid="${task.id}" /></td>
 									<td>${task.taskDescription}</td>
-					
+									<td><input type="text"
+										class="form-control form-control addduedate" id="inputDuedate"
+										placeholder="duedate" name="duedate" value="${dueDate}" taskid="${task.id}"></td>
 								</tr>
 							</c:forEach>
 						</table>

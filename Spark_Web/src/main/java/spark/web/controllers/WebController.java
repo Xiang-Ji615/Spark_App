@@ -87,6 +87,7 @@ public class WebController {
 		map.addAttribute("classId", classId);
 		map.addAttribute("studentId", studentId);
 		map.addAttribute("tasks", taskBo.listTasks());
+		map.addAttribute("dueDate", "20171215");
 		return "Web/AssignTask";
 	}
 	
