@@ -76,5 +76,11 @@ public class WebController {
 		assigningTaskBo.saveOrUpateAssigningTask(assigningTask);
 		return "redirect:../Web/Student?class="+classId+"&student="+studentId;
 	}
+	
+	@RequestMapping(value="AssignTask", method=RequestMethod.GET, produces=MediaType.ALL_VALUE)
+	public String AssignTask(@RequestParam(name="class") String classId, @RequestParam(name="student") String studentId){
+		System.out.println("Class: "+classId + ", Student: "+studentId);
+		return "Web/AssignTask";
+	}
 
 }
