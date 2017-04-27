@@ -50,8 +50,8 @@
 						<table class="table table-hover" id="taskTable">
 							<tr>
 								<th width="35%">Action</th>
-								<th width="20%">Due Date</th>
-								<th width="45%">Task Detail</th>
+								<th width="35%">Due Date</th>
+								<th width="30%">Task Detail</th>
 							</tr>
 							<c:forEach items="${tasks}" var="task">
 								<tr>
