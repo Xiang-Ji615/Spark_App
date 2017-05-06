@@ -208,6 +208,20 @@ public class DaoApp  implements CommandLineRunner {
     	user.setUserRole(Arrays.asList(userRole));
     	userDao.saveOrUpateUser(user);
     	
+    	User student = new User("mario", "$2a$04$WcgNb9BEF10WrFZAC5PFqOqcMTrV75XNpiWqMLj.VZeHogXGF6R/.", true);
+    	UserRole studentRole = new UserRole();
+    	studentRole.setRole("ROLE_ADMIN");
+    	studentRole.setUser(student);
+    	student.setUserRole(Arrays.asList(studentRole));
+    	userDao.saveOrUpateUser(student);
+    	
+    	User parent = new User("marioparent", "$2a$04$QH2rMTERK2nONzyFl40p5.3mmCI7jm57iOrwnM3wycy8URBVN7f7O", true);
+    	UserRole parentRole = new UserRole();
+    	parentRole.setRole("ROLE_ADMIN");
+    	parentRole.setUser(parent);
+    	parent.setUserRole(Arrays.asList(parentRole));
+    	userDao.saveOrUpateUser(parent);
+    	
     	
     	System.out.println(assigningTaskDao.findById(2));
     }

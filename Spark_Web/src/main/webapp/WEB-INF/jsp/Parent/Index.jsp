@@ -42,7 +42,7 @@
 			<div class="row">
 				<div class="col-sm-12 col-sm-offset-0 col-md-4 col-md-offset-4">
 					<div class="card">
-						<img class="card-img-top" src="../Parent/Img/parents-icon.png"
+						<img class="card-img-top" src="../Parent/img/parents-icon.png"
 							alt="Card image cap">
 						<div class="card-block">
 							<h4 class="card-title">Parent</h4>
