@@ -2,6 +2,7 @@ package main.java.spark.web.controllers;
 
 import java.util.Optional;
 
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -36,7 +37,8 @@ public class WebController {
 	
 	
 	@RequestMapping(value="Index", method=RequestMethod.GET, produces=MediaType.ALL_VALUE)
-	public String Index(ModelMap map){
+	public String Index(ModelMap map, HttpServletRequest request){
+		System.out.println(request.getSession().getAttribute("role"));
 		map.addAttribute("classes", classBo.listClasses());
 		return "Web/Index";
 	}

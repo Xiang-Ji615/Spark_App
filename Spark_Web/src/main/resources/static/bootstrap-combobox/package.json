@@ -1,0 +1,88 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@danielfarrell/bootstrap-combobox",
+        "scope": "@danielfarrell",
+        "escapedName": "@danielfarrell%2fbootstrap-combobox",
+        "name": "@danielfarrell/bootstrap-combobox",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "c:\\Sharon_PM"
+    ]
+  ],
+  "_from": "@danielfarrell/bootstrap-combobox@latest",
+  "_id": "@danielfarrell/bootstrap-combobox@1.1.8",
+  "_inCache": true,
+  "_location": "/@danielfarrell/bootstrap-combobox",
+  "_nodeVersion": "6.10.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/bootstrap-combobox-1.1.8.tgz_1489936345636_0.12048008153215051"
+  },
+  "_npmUser": {
+    "name": "danielfarrell",
+    "email": "danielfarrell76@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@danielfarrell/bootstrap-combobox",
+    "scope": "@danielfarrell",
+    "escapedName": "@danielfarrell%2fbootstrap-combobox",
+    "name": "@danielfarrell/bootstrap-combobox",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@danielfarrell/bootstrap-combobox/-/bootstrap-combobox-1.1.8.tgz",
+  "_shasum": "489d0a9edb5a2fc9c65971d4422294e7ab9320ec",
+  "_shrinkwrap": null,
+  "_spec": "@danielfarrell/bootstrap-combobox",
+  "_where": "c:\\Sharon_PM",
+  "author": {
+    "name": "Daniel Farrell"
+  },
+  "bugs": {
+    "url": "https://github.com/danielfarrell/bootstrap-combobox/issues"
+  },
+  "dependencies": {},
+  "description": "A combobox plugin that works with twitter bootstrap",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "489d0a9edb5a2fc9c65971d4422294e7ab9320ec",
+    "tarball": "https://registry.npmjs.org/@danielfarrell/bootstrap-combobox/-/bootstrap-combobox-1.1.8.tgz"
+  },
+  "gitHead": "ac332bbadcab9162d2e58ec4eaf917bdddeaf8d1",
+  "homepage": "https://github.com/danielfarrell/bootstrap-combobox#readme",
+  "keywords": [
+    "bootstrap",
+    "combobox",
+    "dropdown"
+  ],
+  "license": "Apache-2.0",
+  "main": "js/bootstrap-combobox.js",
+  "maintainers": [
+    {
+      "name": "danielfarrell",
+      "email": "danielfarrell76@gmail.com"
+    }
+  ],
+  "name": "@danielfarrell/bootstrap-combobox",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielfarrell/bootstrap-combobox.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.8"
+}

@@ -5,13 +5,19 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import main.java.spark.bo.bo.IUserBo;
 import main.java.spark.dao.model.user.User;
@@ -21,12 +27,19 @@ import main.java.spark.dao.model.user.UserRole;
 public class SparkUserDetailsService implements UserDetailsService{
 
 	
+	
+	
 	@Autowired
 	IUserBo userBo;
 
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException, DataAccessException {
 		// TODO Auto-generated method stub
+		RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
+		HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
+		System.out.println(request.getParameter("role"));
+		request.getSession().setAttribute("role", request.getParameter("role"));
+		
 		User user = userBo.findByUsername(username);
 		List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRole());
 		return buildUserForAuthentication(user, authorities);
