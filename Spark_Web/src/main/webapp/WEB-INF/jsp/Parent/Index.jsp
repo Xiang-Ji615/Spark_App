@@ -5,6 +5,7 @@
 <html lang="en">
 
 <jsp:include page="../Shared/Head.jsp"></jsp:include>
+<link href="../Parent/css/Student.css" rel="stylesheet">
 
 <body class="index" id="page-top">
 
@@ -21,16 +22,16 @@
 			<a class="navbar-brand" href="#page-top">SparQ App</a>
 			<div class="collapse navbar-collapse" id="navbarExample">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="#">Teachers</a>
+					<li class="nav-item"><a class="nav-link" href="#">Parents</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Tasks</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Marks</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Notes</a>
 					</li>
 					<li class="nav-item"><a id="logout" class="nav-link"
 						href="javascript:formSubmit()">Logout</a></li>
-					<!--  li class="nav-item">
-                        <a class="nav-link" href="#about"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li -->
 				</ul>
 			</div>
 		</div>
@@ -38,40 +39,23 @@
 
 	<section id="contact">
 		<div class="container">
-			<div class="panel panel-info">
-				<div class="panel-heading">Class</div>
-				<div class="panel-body">
-					<div class="table-responsive">
-						<table class="table table-hover">
-							<tr>
-								<th>Action</th>
-								<th>Year</th>
-								<th>Class No</th>
-							</tr>
-							<c:forEach items="${classes}" var="classDetail">
-								<tr>
-									<td><a class="btn btn-primary"
-										href="../Web/Class?class=${classDetail.id}">Detail</a></td>
-									<td>${classDetail.year}</td>
-									<td>${classDetail.classNumber}</td>
-								</tr>
-							</c:forEach>
-						</table>
-						<!--  div class="row">
-						<div class="col-sm-offset-10 col-sm-2">
-							<a href="ServiceBoxAdd" class="btn btn-primary btn-block">Add</a>
+			<div class="row">
+				<div class="col-sm-12 col-sm-offset-0 col-md-4 col-md-offset-4">
+					<div class="card">
+						<img class="card-img-top" src="../Parent/Img/parents-icon.png"
+							alt="Card image cap">
+						<div class="card-block">
+							<h4 class="card-title">Parent</h4>
+							<p class="card-text">Child Info: Mario</p>
+							<p class="card-text">Teacher Info: Mario's teacher</p>
 						</div>
-					</div -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-
-
 	<jsp:include page="../Shared/Foot.jsp"></jsp:include>
 
 </body>
-
 </html>

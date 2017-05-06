@@ -37,7 +37,7 @@ public class SparkUserDetailsService implements UserDetailsService{
 		// TODO Auto-generated method stub
 		RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
 		HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
-		System.out.println(request.getParameter("role"));
+//		System.out.println(request.getParameter("role"));
 		request.getSession().setAttribute("role", request.getParameter("role"));
 		
 		User user = userBo.findByUsername(username);

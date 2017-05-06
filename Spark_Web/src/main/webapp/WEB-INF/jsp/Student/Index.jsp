@@ -5,10 +5,11 @@
 <html lang="en">
 
 <jsp:include page="../Shared/Head.jsp"></jsp:include>
+<link href="../Student/css/Student.css" rel="stylesheet">
 
 <body class="index" id="page-top">
 
-<!-- Navigation -->
+	<!-- Navigation -->
 	<nav class="navbar fixed-top navbar-toggleable-md navbar-light"
 		id="mainNav">
 		<button class="navbar-toggler navbar-toggler-right" type="button"
@@ -18,29 +19,41 @@
 			Menu <i class="fa fa-bars"></i>
 		</button>
 		<div class="container">
-			<a class="navbar-brand" href="#page-top">Spark App</a>
+			<a class="navbar-brand" href="#page-top">SparQ App</a>
 			<div class="collapse navbar-collapse" id="navbarExample">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="#">Teachers</a>
+					<li class="nav-item"><a class="nav-link" href="#">Students</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Tasks</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Marks</a>
 					</li>
 					<li class="nav-item"><a id="logout" class="nav-link"
 						href="javascript:formSubmit()">Logout</a></li>
-					<!--  li class="nav-item">
-                        <a class="nav-link" href="#about"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li -->
 				</ul>
 			</div>
 		</div>
 	</nav>
 
 	<section id="contact">
-	<h1>Hello World</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-sm-offset-0 col-md-4 col-md-offset-4">
+					<div class="card">
+						<img class="card-img-top" src="../Student/Img/201818.svg"
+							alt="Card image cap">
+						<div class="card-block">
+							<h4 class="card-title">Mario</h4>
+							<p class="card-text">Score: 120</p>
+							<a href="#" class="btn btn-primary">Edit profile</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
-<jsp:include page="../Shared/Foot.jsp"></jsp:include>
+	<jsp:include page="../Shared/Foot.jsp"></jsp:include>
 
 </body>
 </html>

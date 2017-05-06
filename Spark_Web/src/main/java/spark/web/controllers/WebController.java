@@ -38,9 +38,23 @@ public class WebController {
 	
 	@RequestMapping(value="Index", method=RequestMethod.GET, produces=MediaType.ALL_VALUE)
 	public String Index(ModelMap map, HttpServletRequest request){
-		System.out.println(request.getSession().getAttribute("role"));
+		String role= request.getSession().getAttribute("role").toString();
 		map.addAttribute("classes", classBo.listClasses());
-		return "Web/Index";
+		String ret = "";
+		switch (role) {
+		case "Student":
+			ret ="Student/Index";
+			break;
+		case "Parent":
+			ret = "Parent/Index";
+			break;
+		case "Teacher":
+			ret = "Web/Index";
+			break;
+		default:
+			break;
+		}
+		return ret;
 	}
 	
 	@RequestMapping(value="Class", method=RequestMethod.GET, produces=MediaType.ALL_VALUE)
