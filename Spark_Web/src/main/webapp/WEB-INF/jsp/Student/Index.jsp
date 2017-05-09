@@ -24,10 +24,8 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link" href="#">Students</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Tasks</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Marks</a>
-					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Tasks</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Marks</a></li>
 					<li class="nav-item"><a id="logout" class="nav-link"
 						href="javascript:formSubmit()">Logout</a></li>
 				</ul>
@@ -47,6 +45,36 @@
 							<p class="card-text">Score: 120</p>
 							<a href="#" class="btn btn-primary">Edit profile</a>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-info">
+				<div class="panel-heading">Student</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<tr>
+								<th>Mark</th>
+								<th>Task Detail</th>
+								<th>Completed</th>
+								<th>Due Date</th>
+							</tr>
+							<c:forEach items="${tasks}" var="task">
+								<tr>
+									<td>${task.mark}</td>
+									<td>${task.task.taskDescription}</td>
+									<td>
+									<c:if test="${task.completed == '1'}">
+										Yes
+									</c:if> 
+									<c:if test="${task.completed != '1'}">
+										No
+									</c:if>
+									</td>
+									<td>${task.dueDate}</td>
+								</tr>
+							</c:forEach>
+						</table>
 					</div>
 				</div>
 			</div>

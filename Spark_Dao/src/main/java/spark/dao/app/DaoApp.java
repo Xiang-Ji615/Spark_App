@@ -79,17 +79,8 @@ public class DaoApp  implements CommandLineRunner {
     	//Init Student
     	List<Student> students = new ArrayList<>();
     	
-    	Student student1 = new Student();
-    	student1.setFirstName("Madeleine");
-    	student1.setLastName("Strehlow");
-    	student1.setUsername("mstrehlow");
-    	student1.setAddress("29 Scenic Road, BLUE COW NSW 2624");
-    	student1.setPassword("password1");
-    	student1.setTeacher(teacher);
-    	student1.setClassDetail(classDetail);
-    	
-    	students.add(student1);
-    	
+    	Student student1 = new Student("Mario", "Max", "mario", "password", "90 Albacore Crescent, BURWOOD NSW 2581", teacher, classDetail);
+    	students.add(student1);   
     	Student student2 = new Student("Harrison", "McLaren", "hmclaren", "password2", "62 Bresnahans Lane, BERRIMA NSW 2577", teacher, classDetail);
     	students.add(student2);
     	Student student3 = new Student("Mulan", "Chu", "mchu", "password3", "93 Adavale Road, BRISBANE GROVE NSW 2580", teacher, classDetail);
@@ -128,6 +119,15 @@ public class DaoApp  implements CommandLineRunner {
     	students.add(student19);
     	Student student20 = new Student("Jessica", "Schmidt", "jschmidt", "password20", "90 Albacore Crescent, BREADALBANE NSW 2581", teacher, classDetail);
     	students.add(student20);
+     	Student student21 = new Student();
+     	student21.setFirstName("Madeleine");
+     	student21.setLastName("Strehlow");
+     	student21.setUsername("mstrehlow");
+     	student21.setAddress("29 Scenic Road, BLUE COW NSW 2624");
+     	student21.setPassword("password1");
+     	student21.setTeacher(teacher);
+    	student21.setClassDetail(classDetail);
+    	students.add(student21);
     	
     	
     	for(Student student : students)

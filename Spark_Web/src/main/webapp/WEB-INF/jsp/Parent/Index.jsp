@@ -47,7 +47,7 @@
 						<div class="card-block">
 							<h4 class="card-title">Parent</h4>
 							<p class="card-text">Child Info: Mario</p>
-							<p class="card-text">Teacher Info: Mario's teacher</p>
+							<p class="card-text">Teacher Info: Jane Simth</p>
 						</div>
 					</div>
 				</div>

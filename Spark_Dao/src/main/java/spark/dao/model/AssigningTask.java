@@ -19,11 +19,11 @@ public class AssigningTask {
 	@Column(name = "id", unique = true, nullable = false)
 	int id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "task_id", referencedColumnName = "id")
 	Task task;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "student_id", referencedColumnName = "id")
 	Student student;
 

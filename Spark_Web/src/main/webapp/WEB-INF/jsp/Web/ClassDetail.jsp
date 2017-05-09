@@ -47,7 +47,7 @@
 								<th>Action</th>
 								<th>First Name</th>
 								<th>Last Name</th>
-								<th>Address</th>
+								<th>Avg Score</th>
 							</tr>
 							<c:forEach items="${students}" var="student">
 								<tr>
@@ -56,7 +56,7 @@
 									</td>
 									<td>${student.firstName}</td>
 									<td>${student.lastName}</td>
-									<td>${student.address}</td>
+									<td>${student.avgScore}</td>
 								</tr>
 							</c:forEach>
 						</table>

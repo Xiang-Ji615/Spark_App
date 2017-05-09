@@ -39,7 +39,7 @@
 	<section id="contact">
 		<div class="container">
 			<div class="panel panel-info">
-				<div class="panel-heading">Student</div>
+				<div class="panel-heading">${studentDetail}</div>
 				<div class="panel-body">
 					<div class="table-responsive">
 						<table class="table table-hover">
@@ -57,7 +57,14 @@
 									</td>
 									<td>${task.mark}</td>
 									<td>${task.task.taskDescription}</td>
-									<td>${task.completed}</td>
+									<td>
+									<c:if test="${task.completed == '1'}">
+										Yes
+									</c:if> 
+									<c:if test="${task.completed != '1'}">
+										No
+									</c:if> 
+									</td>
 									<td>${task.dueDate}</td>									
 								</tr>
 							</c:forEach>

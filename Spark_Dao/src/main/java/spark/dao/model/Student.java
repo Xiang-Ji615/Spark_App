@@ -13,6 +13,7 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
@@ -45,13 +46,34 @@ public class Student {
 	@JoinColumns(value = { @JoinColumn(name = "teacherId", referencedColumnName = "id", nullable = false) })
 	Teacher teacher;
 
-	@OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
 	@Cascade(value = { CascadeType.ALL })
 	List<AssigningTask> assigningTasks;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumns(value = { @JoinColumn(name = "class_id", referencedColumnName = "id", nullable = false) })
 	Class classDetail;
+
+	@Transient
+	Double avgScore;
+
+	public Double getAvgScore() {
+		if (assigningTasks != null && assigningTasks.size() > 0) {
+			Double scoreCache = 0.0;
+			for (AssigningTask task : assigningTasks) {
+				scoreCache += task.getMark();
+			}
+		    avgScore = scoreCache/assigningTasks.size();
+		}
+		else{
+			avgScore = 0.0;
+		}
+		return avgScore;
+	}
+
+	public void setAvgScore(Double avgScore) {
+		this.avgScore = avgScore;
+	}
 
 	public int getId() {
 		return id;
@@ -125,7 +147,8 @@ public class Student {
 		this.classDetail = classDetail;
 	}
 
-	public Student(String firstName, String lastName, String username, String password, String address, Teacher teacher, Class classDetail) {
+	public Student(String firstName, String lastName, String username, String password, String address, Teacher teacher,
+			Class classDetail) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
